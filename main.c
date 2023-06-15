@@ -9,7 +9,7 @@
 #include "charset.h"
 #include "timer.h"
 
-void lcdInfo(uint8_t lives, char lifestring[], uint8_t score, char scorestring[]){
+void lcdInfo(uint32_t lives, char lifestring[], uint32_t score, char scorestring[]){
 	memset(buffer, 0x00, 512);
 	sprintf(lifestring, "Lives: %d", lives);
 	lcd_write_string(lifestring, 1);
@@ -26,25 +26,25 @@ void lcdInfo(uint8_t lives, char lifestring[], uint8_t score, char scorestring[]
 int main() {
 	uart_init(576000);
 	clrscr();
-	uint8_t lives = 3;
+	uint32_t lives = 3;
 	char lifestring[8];
-	uint8_t score = 0;
+	uint32_t score = 0;
 	char scorestring[8];
 	int count = 0;
 	asteroid_t asteroids;
 
-	asteroids.positionX = 24;
-	asteroids.positionY = 24;
-	asteroids.vectorX = 4;
-	asteroids.vectorY = 4;
+	asteroids.positionX = 384;
+	asteroids.positionY = 384;
+	asteroids.vectorX = 64;
+	asteroids.vectorY = 64;
 	asteroids.destroyed = 0;
 
 	spaceship_t spaceship;
 
-	spaceship.positionX = 96;
-	spaceship.positionY = 96;
-	spaceship.vectorX = -8;
-	spaceship.vectorY = -8;
+	spaceship.positionX = 1536;
+	spaceship.positionY = 1536;
+	spaceship.vectorX = -128;
+	spaceship.vectorY = -128;
 	spaceship.orientation = 0;
 	gotoxy(0,0);
 	clrscr();
@@ -60,7 +60,7 @@ int main() {
 		drawAsteroid(&asteroids);
 		drawSpaceship(&spaceship);
 		if(shipAsteroidCollision(&spaceship, &asteroids)){
-			gotoxy(100,100);
+			gotoxy(1600,1600);
 			printf("Colission!");
 			lives = lives - 1;
 			score = score +40;
