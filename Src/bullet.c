@@ -43,53 +43,53 @@ void shoot(bullet_t * bullet, spaceship_t * spaceship) {
 	switch((*spaceship).rotation){
 	case 0:
 		(*bullet).vectorX = 0;
-		(*bullet).vectorY = -48;
+		(*bullet).vectorY = -96;
 		(*bullet).positionY -= 128;
 		break;
 
 	case 1:
-		(*bullet).vectorX = 32;
-		(*bullet).vectorY = -32;
+		(*bullet).vectorX = 64;
+		(*bullet).vectorY = -64;
 		(*bullet).positionX += 128;
 		(*bullet).positionY -= 128;
 
 		break;
 
 	case 2:
-		(*bullet).vectorX = 48;
+		(*bullet).vectorX = 96;
 		(*bullet).vectorY = 0;
 		(*bullet).positionX += 128;
 		break;
 
 	case 3:
-		(*bullet).vectorX = 32;
-		(*bullet).vectorY = 32;
+		(*bullet).vectorX = 64;
+		(*bullet).vectorY = 64;
 		(*bullet).positionX += 128;
 		(*bullet).positionY += 128;
 		break;
 
 	case 4:
 		(*bullet).vectorX = 0;
-		(*bullet).vectorY = 48;
+		(*bullet).vectorY = 96;
 		(*bullet).positionY += 128;
 		break;
 
 	case 5:
-		(*bullet).vectorX = -32;
-		(*bullet).vectorY = 32;
+		(*bullet).vectorX = -64;
+		(*bullet).vectorY = 64;
 		(*bullet).positionY += 128;
 		(*bullet).positionX -= 128;
 		break;
 
 	case 6:
-		(*bullet).vectorX = -48;
+		(*bullet).vectorX = -96;
 		(*bullet).vectorY = 0;
 		(*bullet).positionX -= 128;
 		break;
 
 	case 7:
-		(*bullet).vectorX = -32;
-		(*bullet).vectorY = -32;
+		(*bullet).vectorX = -64;
+		(*bullet).vectorY = -64;
 		(*bullet).positionX -= 128;
 		(*bullet).positionY -= 128;
 		break;

@@ -86,32 +86,32 @@ void wind_resistance(spaceship_t * spaceship_p) {
 void update_velocity(spaceship_t * spaceship_p) {
 	switch((*spaceship_p).rotation) {
 	case 0:
-		(*spaceship_p).velY -= 4;
+		(*spaceship_p).velY -= 8;
 		break;
 	case 1:
-		(*spaceship_p).velX += 4;
-		(*spaceship_p).velY -= 4;
+		(*spaceship_p).velX += 8;
+		(*spaceship_p).velY -= 8;
 		break;
 	case 2:
-		(*spaceship_p).velX += 4;
+		(*spaceship_p).velX += 8;
 		break;
 	case 3:
-		(*spaceship_p).velX += 4;
-		(*spaceship_p).velY += 4;
+		(*spaceship_p).velX += 8;
+		(*spaceship_p).velY += 8;
 		break;
 	case 4:
-		(*spaceship_p).velY += 4;
+		(*spaceship_p).velY += 8;
 		break;
 	case 5:
-		(*spaceship_p).velX -= 4;
-		(*spaceship_p).velY += 4;
+		(*spaceship_p).velX -= 8;
+		(*spaceship_p).velY += 8;
 		break;
 	case 6:
-		(*spaceship_p).velX -= 4;
+		(*spaceship_p).velX -= 8;
 		break;
 	case 7:
-		(*spaceship_p).velX -= 4;
-		(*spaceship_p).velY -= 4;
+		(*spaceship_p).velX -= 8;
+		(*spaceship_p).velY -= 8;
 		break;
 	}
 }

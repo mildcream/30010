@@ -95,14 +95,14 @@ int8_t asteroidBulletCollision(asteroid_t * asteroid, bullet_t * bullet, spacesh
 			int8_t withinGravityFieldY = (((*bullet).positionY <  gravYMax) && ((*bullet).positionY >  gravYMin));
 			if(withinGravityFieldX && withinGravityFieldY){
 				if((*bullet).positionX < (*asteroid).x){ //Accelerates bullets in the field
-					(*bullet).vectorX += 2;
+					(*bullet).vectorX += 8;
 				} else if((*bullet).positionX > (*asteroid).x) {
-					(*bullet).vectorX -= 2;
+					(*bullet).vectorX -= 8;
 				}
 				if((*bullet).positionY < (*asteroid).y){
-					(*bullet).vectorY += 2;
+					(*bullet).vectorY += 8;
 				} else if((*bullet).positionY > (*asteroid).y) {
-					(*bullet).vectorY -= 2;
+					(*bullet).vectorY -= 8;
 				}
 			}
 			return 0;
@@ -116,9 +116,9 @@ int8_t asteroidBulletCollision(asteroid_t * asteroid, bullet_t * bullet, spacesh
 void moveAlien(alien_t * alien, spaceship_t * spaceship){
 	if((*alien).active){
 		if(((*alien).x) < ((*spaceship).x)){
-			(*alien).x = (*alien).x+16;
+			(*alien).x = (*alien).x+48;
 		} else if(((*alien).x) > ((*spaceship).x)){
-			(*alien).x = (*alien).x-16;
+			(*alien).x = (*alien).x-48;
 		}
 
 		if((*alien).x > 128*190) {
@@ -128,9 +128,9 @@ void moveAlien(alien_t * alien, spaceship_t * spaceship){
 		}
 
 		if((*alien).y < (*spaceship).y){
-			(*alien).y = (*alien).y+16;
+			(*alien).y = (*alien).y+48;
 		} else if((*alien).y > (*spaceship).y){
-			(*alien).y = (*alien).y-16;
+			(*alien).y = (*alien).y-48;
 		}
 
 		if((*alien).y > 128*190) {
